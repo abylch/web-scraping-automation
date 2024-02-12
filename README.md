@@ -7,6 +7,43 @@ Web Scraping with Selenium allows you to gather all the required data using Sele
 
 # Researcher Information Scraper
 
+# Rutgers University Departments Researcher Information Scraper
+
+## Overview
+
+This Python script is designed for scraping researcher information from various departments at Rutgers University. The script utilizes the Selenium web driver for automated interaction with the websites, fetching details like name, department, institution, title, expertise, publications, and gender probability.
+
+## Setup
+
+1. **Libraries:** The script requires several Python libraries, including `selenium`, `webdriver_manager`, `urllib`, `csv`, `json`, `openpyxl`, `pandas`, `time`, and `re`. Make sure to install them using `pip install [library_name]`.
+
+2. **Web Driver:** The script uses the Chrome web driver. Ensure you have Chrome installed and download the appropriate web driver using `ChromeDriverManager().install()`.
+
+3. **Run the Script:** Execute the script, and it will navigate through the specified department pages, extract researcher details, and save the results to an Excel file.
+
+## Features
+
+- The script provides functionalities such as counting publications, finding names in publications, determining department and rank based on specific keywords, cleaning and counting words in expertise, and fetching gender information from an external API.
+
+- Each department has a dedicated function (`philosophy_res`, `biology_res`, `cs_res`, `psycho_res`, `law_res`) to handle the unique structure of its researcher pages.
+
+- The final output is a consolidated Excel file named "result.xlsx" containing researcher information from all departments.
+
+## Challenges
+
+- The script addresses challenges related to diverse page structures, varying publication formats, and different information layouts on each department's website.
+
+- It handles issues such as loading more people, extracting information from linked pages, and cleaning up expertise and publication text.
+
+## Usage
+
+1. Adjust the URLs for each department as needed.
+2. Customize the functions (`department_func`, `rank_func`, `word_counter`, `api_gender`, `links`) for new department websites.
+3. Run the script to gather and consolidate researcher information.
+
+Feel free to tailor the script to your specific needs or extend it for additional departments.
+
+
 ## Part 1 – General Functions for All Departments:
 - `def pub_count`: A function that counts publications based on the years appearing on the page, specifically counting how many times years between 1960 and 2022 appear. Later, it compares this to two other counters to get the most accurate number of researcher publications since each page is structured differently.
   
